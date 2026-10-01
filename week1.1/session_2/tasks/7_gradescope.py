@@ -3,11 +3,20 @@
 # You are going to write a very simple program:
 
 # Ask a user to enter two numbers (one per input)
+try:
+    num1 = int(input("Enter your first number: "))
+    num2 = int(input("Enter your second number: "))
+    # multiply those numbers together
 
-# multiply those numbers together
+    tot = num1 * num2
 
-# print out the result
+    # print out the result
 
+    print(f"The result of {num1} multiplied by {num2} is {tot}.")
+
+except:
+    print("The value you have entered is not an integer.")
+    
 # There is an extra point available for validating that they entered numbers!
 # Add to your code so that if they entered something other than an integer it prints
 # 'That is not a number' and exits.
