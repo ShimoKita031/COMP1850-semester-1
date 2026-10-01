@@ -15,7 +15,7 @@ try:
     print(f"The result of {num1} multiplied by {num2} is {tot}.")
 
 except:
-    print("The value you have entered is not an integer.")
+    print("That is not a number")
     
 # There is an extra point available for validating that they entered numbers!
 # Add to your code so that if they entered something other than an integer it prints
