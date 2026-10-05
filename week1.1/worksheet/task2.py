@@ -23,7 +23,7 @@ try:
     # Calculate the total amount of money including interest (0.8% of the final annual amount) they will have saved in a year.
     # print this out in the format £X.XX (to two decimal places).
 
-    total = yearly + yearly * 0.008
+    total = yearly * 1.008
     print (f"You will save £{total:.2f} every year including interest.")
 
 
