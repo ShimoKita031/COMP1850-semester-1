@@ -1,9 +1,11 @@
 # Week 1.3, Session 1: Task 3b
 
-fruit = ['apple','pear','banana','orange']
+fruit = ['apple', 'pear', 'banana', 'orange']
 
 while fruit:
-	print(fruit.pop())
-
+	if fruit:
+		print(fruit.pop())
+else:
+		print("List is empty")
 
 # Add an else clause with a message that the list is now empty
