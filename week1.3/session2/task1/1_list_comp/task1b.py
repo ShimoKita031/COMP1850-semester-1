@@ -10,8 +10,7 @@ for i in values:
         newval.append(2 * i)
     else:
         newval.append(i)
-
+        
 print(newval)
 
 # write the list comprehension equivalent to the `for` loop
-

@@ -1,0 +1,3 @@
+Name: Cheeseman
+Age: 17
+Favourite colour: Yellow
