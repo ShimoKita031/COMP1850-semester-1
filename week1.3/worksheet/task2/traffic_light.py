@@ -1,7 +1,7 @@
 """
 Portfolio Task - Week 1.3
 By submitting this code you are declaring that all work in this file, other than any provided template code, was written and developed by you independently.
-Name: 
+Name: Max Chan
 """
 
 states = { "red":4, "red_amber":3, "green":5, "amber":3 }
