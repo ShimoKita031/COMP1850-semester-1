@@ -6,7 +6,7 @@
     other than any provided template code, was written and developed by
     you independently.
 
-    Name:
+    Name: Max Chan
 """
 
 def currency_converter(amount, from_currency, to_currency):
@@ -19,9 +19,13 @@ def currency_converter(amount, from_currency, to_currency):
     }
 
     # your code here
-
-    return None
+    for k in conversion_rate:
+        if from_currency == k:
+            for foreign_currencies in k:
+                if to_currency == foreign_currencies:
+                    converted_amount = round(amount * k.get(foreign_currencies), 2)
+    #return None
 
 # Submit only this file currency_converter.py with the completed function.
-
+currency_converter(100, "GBP", "CNY")
 # Remove any additional code you may have added during development and testing.
