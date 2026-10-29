@@ -19,9 +19,9 @@ def currency_converter(amount, from_currency, to_currency):
     }
 
     # your code here
-    for k in conversion_rate:
-        if from_currency == k:
-            for foreign_currencies in k:
+    for k in conversion_rate.keys():
+        if from_currency == k: 
+            for foreign_currencies in k.keys():
                 if to_currency == foreign_currencies:
                     converted_amount = round(amount * k.get(foreign_currencies), 2)
     #return None
