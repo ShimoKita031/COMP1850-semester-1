@@ -19,13 +19,12 @@ def currency_converter(amount, from_currency, to_currency):
     }
 
     # your code here
-    for k in conversion_rate.keys():
-        if from_currency == k: 
-            for foreign_currencies in k.keys():
-                if to_currency == foreign_currencies:
-                    converted_amount = round(amount * k.get(foreign_currencies), 2)
-    #return None
+    if amount >= 0:
+        rate = conversion_rate[from_currency][to_currency]
+        converted_amount = round(amount * rate, 2)
+        return converted_amount
+    else:
+        return 0.0
 
 # Submit only this file currency_converter.py with the completed function.
-currency_converter(100, "GBP", "CNY")
 # Remove any additional code you may have added during development and testing.
