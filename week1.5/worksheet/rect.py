@@ -23,28 +23,27 @@ class Rectangle:
 
     # Implement methods is_square(), area() & perimeter() here
     # (See README.md for details of what they should do)
-    @staticmethod
 
-    def is_square(width, height):
+    def is_square(self):
         """
         Checks if width and height have equal length.
         If they are equal, returns that the rectangle is a square.
         """
-        if width == height:
+        if self.width == self.height:
             return True
         else:
             return False
 
-    def area(width, height):
+    def area(self):
         """
         Calculates and returns the area of the rectangle.
         """
-        area = width * height
+        area = self.width * self.height
         return area
 
-    def perimeter(width, height):
+    def perimeter(self):
         """
         Calculates and returns the perimeter of the rectangle.
         """
-        perimeter = 2 * width + 2 * height
+        perimeter = 2 * self.width + 2 * self.height
         return perimeter

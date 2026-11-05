@@ -15,31 +15,27 @@ class Person:
         if name == "":
             raise ValueError("Name must not be empty")
         if not isinstance(birth, date):
-            raise TypeError("Day of birth must be in date format")
+           raise TypeError("Date of birth must be in date format")
 
         self.name = name
         self.birth = birth
 
     # Write a constructor here to create and initialize name and
     # birth fields (see README.md for further details)
-    @staticmethod
 
-    def initials(name):
+    def initials(self):
         """
-        Returns the initials of the name inputted.
+        Returns the initials of the name input.
         """
-        initials = ""
-        for i in name:
-            if i.isupper() == True:
-                initials = initials + i
+        initials = "".join(word[0].upper() for word in self.name.split(" "))
         return initials
 
-    def is_birthday(birth):
+    def is_birthday(self):
         """
         Returns if it is this person's birthday today.
         """
         today = date.today()
-        if birth == today.strftime("%m-%d"):
+        if self.birth.day == today.day and self.birth.month == today.month:
             return True
         else:
             return False
