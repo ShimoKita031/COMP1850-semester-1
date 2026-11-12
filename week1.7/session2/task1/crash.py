@@ -3,7 +3,7 @@
 # Run this program and observe what happens
 
 def assign_values(x):
-    for i in range(100):
+    for i in range(10):
         x[i] = (i + 1) * (i + 1);
 
 if __name__ == "__main__":
