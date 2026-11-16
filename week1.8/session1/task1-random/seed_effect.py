@@ -2,7 +2,8 @@
 
 import random
 
-random.seed(10)
+random.seed(15)
+#sets a seed so that the program generates the same set of random numbers
 
 num1 = random.randint(1, 100)
 num2 = random.randint(1, 100)
