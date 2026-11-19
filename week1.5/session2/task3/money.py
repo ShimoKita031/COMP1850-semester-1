@@ -58,4 +58,4 @@ class Money:
             total_pounds += 1
         return f"£{total_pounds}.{total_pence}"
 
-print(Money(5, 50) + Money(3, 75))  # should print £9.25
+#print(Money(5, 50) + Money(3, 75))  # should print £9.25
