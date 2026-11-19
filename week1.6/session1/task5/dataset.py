@@ -41,8 +41,33 @@ class QuakeDataset:
         # dictionaries. You will need to extract the required values from
         # each dictionary and convert them into the required types before
         # creating a Quake object and storing it in the list.
-
         self.data.clear()
+
+        for row in self.feed.reader():
+            time = datetime(row["time"])
+            latitude = float(row["latitude"])
+            longitude = float(row["longitude"])
+            depth = float(row["depth"])
+            magnitude = float(row["mag"])
+            mag_type = str(row["magType"])
+            nst = int(row["nst"])
+            gap = int(row["gap"])
+            dmin = float(row["dmin"])
+            rms = str(row["rms"])
+            identity = str(row["id"])
+            updated = datetime(row["updated"])
+            place = str(row["place"])
+            type = str(row["earthquake"])
+            horizontal_error = float(row["horizonral Error"])
+            depth_error = float(row["depthError"])
+            mag_error = float(row["magError"])
+            mag_nst = int(row["magNst"])
+            status = str(row["status"])
+            location_source = str(row["locationSource"])
+            mag_source = str(row["magSource"])
+
+        quake = Quake(time, latitude, longitude, depth, magnitude, mag_type, nst, gap, dmin, rms, identity, updated, place, type, horizontal_error, depth_error, mag_error, mag_nst, status, location_source, mag_source)
+        self.data.append(quake)
         
 
     def __len__(self):
@@ -50,6 +75,7 @@ class QuakeDataset:
         Returns the size of this dataset.
         """
         # Write code here that returns the number of quakes downloaded
+        return len(self.data)
 
     def __str__(self):
         """
@@ -57,6 +83,7 @@ class QuakeDataset:
         """
         # Write code here to create and return a string representation
         # (Include number of quakes and details of the feed that was used)
+        return f"Number of earthquakes: {len(self.data)}, dataset from USGS data feed"
 
     def mean_depth(self):
         """
@@ -74,6 +101,16 @@ class QuakeDataset:
         """
         # Write code here that computes the mean magnitude of all the
         # quakes currently in the dataset
+
+        if len(self.data) == 0:
+                    raise QuakeDatasetError("dataset is empty")
+        
+        total_mag = 0
+        for quake in self.data[0:]:
+            total_mag += quake.magnitude
+
+        mean = total_mag / len(self.data)
+        return mean
 
     def shallowest_quake(self):
         """
@@ -94,3 +131,11 @@ class QuakeDataset:
         """
         # Write code here that finds and returns the strongest quake
         # (i.e., the one with the largest magnitude)
+
+        if len(self.data) == 0:
+                    raise QuakeDatasetError("dataset is empty")
+        strongest = self.data[0]
+        for quake in self.data[1:]:
+            if quake.depth < strongest.depth:
+                 strongest = quake
+        return strongest
