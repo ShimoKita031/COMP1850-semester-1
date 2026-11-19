@@ -66,8 +66,10 @@ class QuakeDataset:
             location_source = str(row["locationSource"])
             mag_source = str(row["magSource"])
 
-        quake = Quake(time, latitude, longitude, depth, magnitude, mag_type, nst, gap, dmin, rms, identity, updated, place, type, horizontal_error, depth_error, mag_error, mag_nst, status, location_source, mag_source)
-        self.data.append(quake)
+            quake = Quake(time, latitude, longitude, depth, magnitude, mag_type, nst, gap, dmin, rms, identity, updated, place, type, horizontal_error, depth_error, mag_error, mag_nst, status, location_source, mag_source)
+            self.data.append(quake)
+            
+        return self.data
         
 
     def __len__(self):
